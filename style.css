@@ -4,6 +4,10 @@
 *::after {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 ::-webkit-input-placeholder {
@@ -27,6 +31,12 @@ body {
   margin: 0;
   padding: 0;
   overflow-x: hidden;
+}
+
+body .parent {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
 }
 
 body header {
@@ -127,6 +137,11 @@ body header nav ul li a {
 
 body header nav ul li a span.mat-icon {
   width: 25px;
+}
+
+body header nav ul li a .rotate {
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 body header nav ul li input {
@@ -307,8 +322,133 @@ body .container aside.sidebar .middle-sidebar ul li :hover {
   color: #6214df;
 }
 
+body .container aside.sidebar .bottom-sidebar .fa-brands {
+  font-size: 1.5rem !important;
+  margin: 0 0 1.5rem .5rem;
+}
+
 body main {
   margin: 0 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body main .user-profile {
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  border: 1px solid #6214df;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-shadow: 0px 2px 6px 3px #c7456c;
+          box-shadow: 0px 2px 6px 3px #c7456c;
+}
+
+body main .user-profile .left {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+body main .user-profile .left .profile-img-container {
+  margin: 0 1rem;
+  width: 13%;
+}
+
+body main .user-profile .left .profile-img-container .profile-img {
+  width: 80%;
+  height: 80%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  margin: 1rem;
+  -webkit-transform: rotate(5deg);
+          transform: rotate(5deg);
+}
+
+body main .user-profile .left .profile-detail {
+  margin: 1rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #6214df;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  letter-spacing: 3px;
+  padding: 1rem 0;
+}
+
+body main .user-profile .left .profile-detail .user-name {
+  margin: .5rem;
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+body main .user-profile .left .profile-detail .user-name .text-small {
+  font-weight: 500;
+  font-size: 1rem;
+  color: #0f0f0f;
+}
+
+body main .user-profile .left .profile-detail .user-type {
+  margin: .5rem;
+}
+
+body main .user-profile .left .profile-detail .user-strength {
+  margin: .5rem;
+}
+
+body main .user-profile .right {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body main .user-profile .right .mat-icon {
+  margin: 1rem 2rem;
+  color: #6214df;
+}
+
+body main .user-performance {
+  -webkit-box-flex: 3;
+      -ms-flex: 3;
+          flex: 3;
+  border: 1px solid #6214df;
+}
+
+body main .user-analytics {
+  -webkit-box-flex: 2;
+      -ms-flex: 2;
+          flex: 2;
+  border: 1px solid #6214df;
+  margin-bottom: 1rem;
 }
 
 .open {
