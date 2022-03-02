@@ -73,9 +73,12 @@ sidebarToggle.addEventListener('click',(event)=>{
 modalState = {}
 linkToModelMap = {}
 navLinks.forEach((link,linkIndex)=>{
-     const left = link.parentNode.parentNode.getBoundingClientRect().x
-     const top = link.parentNode.parentNode.getBoundingClientRect().y
-     console.log(left,top);    
+   
+    
+     const left = Math.floor(link.parentNode.parentNode.getBoundingClientRect().x)
+     const top = Math.floor(link.parentNode.parentNode.getBoundingClientRect().y)
+
+     
      linkToModelMap[linkIndex] = link.href.split('#')[1]
      modalState[linkIndex] = false
      link.removeAttribute('href')
@@ -100,11 +103,15 @@ navLinks.forEach((link,linkIndex)=>{
          
          }
          modalState[linkIndex] = !modalState[linkIndex]
-         console.log(linkToModelMap,modalState,linkIndex);
+        
      })
 
 })
-
+window.onresize = (event)=>{
+    document.querySelectorAll('.modal').forEach((modal)=>{
+        modal.classList.remove('modal-open')
+    })
+}
 //them toggle
 const themeToggleBtn = document.querySelector('.toggle-theme-icon')
 themeToggleBtn.addEventListener('click',(event)=>{
@@ -116,12 +123,12 @@ themeToggleBtn.addEventListener('click',(event)=>{
     const val = arr[arr.length-1]
     if( val == 'dark.css' ){
         darkLightLink.href = ''
-        console.log(darkLightLink.href);
+       
     }
     else{
         darkLightLink.href = 'dark.css' 
     }
-    console.log(arr.length);
+     
      
 })
 
@@ -129,15 +136,17 @@ themeToggleBtn.addEventListener('click',(event)=>{
 logout.addEventListener('click',(event)=>{
        const modalLogout = document.querySelector('[data-logout-attribute]')
       
-       console.log(event.target.parentNode);
+       
+       
        const bounds = event.target.parentNode.parentNode.getBoundingClientRect();
         
-       const left = bounds.x + Math.floor(bounds.width/2)
+       const left = bounds.x + Math.floor(bounds.width/2)-50
        const top = bounds.y
        modalLogout.style.left = `${left}px`
        modalLogout.style.top = `${top+50}px`
        modalLogout.classList.toggle('modal-open-logout')
-       console.log(bounds.width);
+      
+       
 })
 
 
@@ -155,7 +164,8 @@ const id = event.target.innerText.toLowerCase()
  const tabData = data.find((val)=>{
       return val.name==id
  })
- console.log(document.querySelector('.completed-count'));
+ 
+ 
  document.querySelector('.completed-count').innerText = tabData.completed.count.toString()
  document.querySelector('.completed-title').innerText = tabData.completed.title.toString()
  document.querySelector('.unfinished-count').innerText = tabData.unfinished.count.toString()
