@@ -10,8 +10,9 @@
         integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="./style.css">
-    <link rel="stylesheet" href="" id="darkThem">
+    <link rel="stylesheet"  id="darkTheme">
     <script src="./app.js" defer></script>
+    <script src="./profile.js" type="module" defer></script>
     <title>Document</title>
 </head>
 
@@ -45,8 +46,10 @@
 
                     <ul>
                         <li>
-                            <p>Edit</p>
+                          
+                            <p>Aprroval Ruquired</p>
                         </li>
+                        <li>  <p>Edit Pending</p></li>
                     </ul>
 
                 </div>
@@ -61,7 +64,22 @@
                 <div id="chatModal" class="modal">
                     <ul>
                         <li>
-                            <p>Chat</p>
+                            
+                                <img class="logo-img" src="./img/asian.jpg" height="35" width="35" alt="">
+                                <span class="friend-name">Joe Biden : </span> Attacked Russia today <span class="friend-name">
+    
+                                </span>
+                              
+                             
+                        </li>
+                        <li>
+                            
+                                <img class="logo-img" src="./img/american.jpg" height="35" width="35" alt="">
+                                <span class="friend-name">Breat Lee : </span> We too! <span class="friend-name">
+    
+                                </span>
+                              
+                             
                         </li>
                     </ul>
 
@@ -78,7 +96,9 @@
 
                     <ul>
                         <li>
-                            <p> Notification</p>
+                            <p> Urgent Meeting</p>
+                            <p> Assignment  Submission</p>
+                            <p> Urgent Meeting</p>
                         </li>
                     </ul>
 
@@ -86,7 +106,7 @@
                 <li>
                     <a class="toggle-theme-icon">
                         <span class="mat-icon material-icons">
-                            light_mode
+                            dark_mode
                         </span>
                     </a>
                 </li>
@@ -171,39 +191,111 @@
                     </div>
                 </div>
                 <div class="right">
-                    <span id="logout" class="mat-icon material-icons">
+                    <span id="logout"  class="mat-icon material-icons">
                         logout
                     </span>
+                    <div data-logout-attribute class="modal">
+                       <p class="confirmation-text">Are you Sure you want to logout</p>
+                       <div class="btn-group">
+                       <button onclick="logoutUser(true)" class="btn confirm"><span class="material-icons">
+                        done
+                        </span></button>
+                       <button onclick="logoutUser(false)" class="btn decline">
+                        <span class="material-icons">
+                            clear
+                            </span></button>
+
+                       </div>
+                    </div>
                     <span class="mat-icon material-icons">
                         account_balance_wallet
                     </span>
                 </div>
             </section>
             <section class="user-performance">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti autem iure, nobis adipisci quod
-                consequatur esse ipsam error in magnam ex illo voluptatum nisi quisquam atque nihil id minima. Numquam,
-                possimus id. Veniam a laboriosam officia quidem, maiores illo aliquam optio nemo tempore. Sunt
-                dignissimos, minus deserunt ducimus veniam veritatis temporibus voluptate, pariatur nobis esse,
-                voluptatibus necessitatibus. Et molestias, laudantium expedita totam magni alias quae animi perferendis
-                amet. Accusamus iure recusandae quam repellendus illum ducimus nesciunt dolores, ullam nam quae alias
-                voluptatibus deserunt suscipit repudiandae dolorem maxime maiores laudantium unde ad ut architecto
-                voluptate mollitia. Autem ad sed maxime quas?
+                <div class="user-performance-nav">
+                    <ul>
+                        <li>
+                            <a class="course-nav" href="#">Course</a>
+                        </li>
+                        <li>
+                            <a class="course-nav" href="#">Exam</a>
+                        </li>
+                        <li>
+                            <a class="course-nav" href="#">Q&A</a>
+                        </li>
+                        <li>
+                            <a href="#activity">Activity</a>
+                        </li>
+                        <li>
+                            <a href="#friends">Friends</a>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-container">
+                    <div class="tab-container-heading">
+                        <div class="completed">
+                            <h3 class="completed-count count">12</h3>
+                            <h4 class="completed-title title">Course Completed</h4>
+                        </div>
+                        <div class="unfinished">
+                            <h3 class="unfinished-count count">3</h3>
+                            <h4 class="unfinished-title title">Course Unfinished</h4>
+                        </div>
+                    </div>
+                    <ul class="task-list">
+                        <li>Basics for Ux Designer</li>
+                        <li>10 Steps to improve your wireframe</li>
+                        <li>A Better Way to Request App Ratings</li>
+                        <li>How to Speed your wordpress website</li>
+                    </ul>
+                </div>
             </section>
             <section class="user-analytics">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Deleniti autem iure, nobis adipisci quod
-                consequatur esse ipsam error in magnam ex illo voluptatum nisi quisquam atque nihil id minima. Numquam,
-                possimus id. Veniam a laboriosam officia quidem, maiores illo aliquam optio nemo tempore. Sunt
-                dignissimos, minus deserunt ducimus veniam veritatis temporibus voluptate, pariatur nobis esse,
-                voluptatibus necessitatibus. Et molestias, laudantium expedita totam magni alias quae animi perferendis
-                amet. Accusamus iure recusandae quam repellendus illum ducimus nesciunt dolores, ullam nam quae alias
-                voluptatibus deserunt suscipit repudiandae dolorem maxime maiores laudantium unde ad ut architecto
-                voluptate mollitia. Autem ad sed maxime quas?
+                <div id="activity" class="chart">
+                    <h3 class="analytics-heading">Marks in last Half</h3>
+                    <div class="chart-container">
+                        <canvas id="myChart"></canvas>
+                    </div>
+                </div>
+                <div id="friends" class="friends-section">
+                    <h3 class="analytics-heading">Freinds Activity</h3>
+                    <ul>
+                        <li>
+                            <img class="logo-img" src="./img/american.jpg" height="35" width="35" alt="">
+                            <span class="friend-name">Ellen </span> Asked question: <span class="friend-name">Best Grid
+                                for
+                                Deveopement
+                            </span>
+                        </li>
+
+                        <li>
+                            <img class="logo-img" src="./img/asian.jpg" height="35" width="35" alt="">
+                            <span class="friend-name">Roger </span> Cleared Exam: <span class="friend-name">
+
+                            </span>
+                            AWS Architect
+                        </li>
+                        <li>
+                            <img class="logo-img" src="./img/indian.jpg" height="35" width="35" alt="">
+                            <span class="friend-name">Parminder </span> Finished course: <span class="friend-name">UX
+                                developer
+                            </span>
+                        </li>
+                        <li>
+                            <img class="logo-img" src="./img/indian.jpg" height="35" width="35" alt="">
+                            <span class="friend-name">Parminder </span> Finished course: <span class="friend-name">UX
+                                developer
+                            </span>
+                        </li>
+                    </ul>
+                </div>
             </section>
 
         </main>
 
     </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
 
 </html>
